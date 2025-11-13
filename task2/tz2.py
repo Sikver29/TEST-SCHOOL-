@@ -1,7 +1,7 @@
 import sys
 
 #чтение данных из файла
-def read_ellipse_data(filename):
+def ellipse_data(filename):
     with open(filename) as f:
         lines = f.readlines()
         # Координаты центра
@@ -22,7 +22,7 @@ def read_points(filename):
     return points
 
 #Определение положение точки относительно эллипса
-def check_point_position(x, y, x0, y0, a, b):
+def point_position(x, y, x0, y0, a, b):
     # Формула эллипса:
     result = ((x - x0) ** 2 / a ** 2) + ((y - y0) ** 2 / b ** 2)
 
@@ -40,11 +40,11 @@ def main():
     ellipse_file = sys.argv[1]
     points_file = sys.argv[2]
 
-    x0, y0, a, b = read_ellipse_data(ellipse_file)
+    x0, y0, a, b = ellipse_data(ellipse_file)
     points = read_points(points_file)
 
     for x, y in points:
-        print(check_point_position(x, y, x0, y0, a, b))
+        print(point_position(x, y, x0, y0, a, b))
 
 
 if __name__ == "__main__":
