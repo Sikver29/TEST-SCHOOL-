@@ -15,7 +15,6 @@ def save_json(filepath, data):
 def create_values_dict(values_data):
     values_dict = {}
 
-    # В файле values.json в корне лежит список "values"
     if "values" in values_data:
         for item in values_data["values"]:
             test_id = item["id"]
