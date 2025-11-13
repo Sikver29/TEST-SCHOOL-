@@ -1,7 +1,7 @@
 import sys
 
 # Чтение чисел
-def read_numbers_from_file(filepath):
+def numbers_from_file(filepath):
     numbers = []
     with open(filepath) as f:
         for line in f:
@@ -40,7 +40,7 @@ def main():
     input_file = sys.argv[1]
     max_moves = 20
 
-    nums = read_numbers_from_file(input_file)
+    nums = numbers_from_file(input_file)
     min_moves = calculate_min_moves(nums)
 
     if min_moves <= max_moves:
